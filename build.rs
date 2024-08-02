@@ -5,9 +5,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     tonic_build::configure()
         .file_descriptor_set_path(out_dir.join("auth_key_descriptor.bin"))
-        .compile(&["proto/auth_key.proto"], &["proto"])?;
+        .compile(&["./proto/auth_key.proto"], &["proto"])?;
 
-    tonic_build::compile_protos("proto/auth_key.proto")?;
+    tonic_build::compile_protos("./proto/auth_key.proto")?;
 
     Ok(())
 }

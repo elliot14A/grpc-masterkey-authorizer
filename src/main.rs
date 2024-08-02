@@ -1,7 +1,11 @@
-mod proto {
-    tonic::include_proto!("auth_key");
-}
+#![allow(dead_code)]
 
-fn main() {
-    println!("Hello, world!");
+mod auth_key;
+mod grpc;
+mod models;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("Starting grpc server...");
+    grpc::start_grpc_server().await
 }
