@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package auth_key;
+
+service AuthKey {
+  rpc CreateAuthKey(CreateAuthKeyRequest) returns (CreateAuthKeyResponse);
+}
+
+message CreateAuthKeyRequest {
+  string name = 1;
+  string description = 2;
+}
+
+message CreateAuthKeyResponse {
+  string api_key = 1;
+}
